@@ -3,6 +3,16 @@ const app = express();
 
 app.use(express.json());
 
+//COMO INICIAR, en terminal ingresar lo siguiente
+//npm init 
+//(package name:) nodejsapi 
+//(entry point): index.js  
+//saltar resto de campos que pide
+//se procede a instalar express: npm install express 
+//FIN.
+
+
+
 //base de datos de prueba local 
 const comidas = [
     {idcomida: 1, nombre: 'alitas', costo: 1000},
@@ -135,7 +145,7 @@ app.get('/api/pedidos',(req,res)=>{
             cantidad:parseInt(req.body.cantidad),
             codigo_factura:parseInt(req.body.codigo_factura)
         };
-        comidas.push(pedido);
+        pedidos.push(pedido);
         res.send(pedido);
     });
     //DELETE
@@ -151,7 +161,7 @@ app.get('/api/pedidos',(req,res)=>{
     
 
 
-//COMPLEJOSSSS
+//RUTAS COMPLEJAS
 //----------------------------------------------------------------------------------------------
 //obtener lista de pedidos para un idcomida especifico
 // GET /api/comidas/:idcomida/pedidos
